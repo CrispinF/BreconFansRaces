@@ -1,0 +1,73 @@
+/* to reduce the spacing between table rows, and make text align left and top */
+table.filtercriteria
+{
+}
+table.filtercriteria th, td, input, select, textarea
+{
+    text-align: left;
+}
+table.resultstable 
+{
+    width: 100%;
+    font-size:  90%;
+    margin: 0 0 20px 0;
+}
+.resultstable th, td, a
+{
+    text-align: left;
+}
+
+div.raceinfo th
+{
+    text-align:		left;
+    vertical-align:	top !important;
+    padding-top:	0.5em;
+    padding-bottom:	0.5em;
+    padding-right:	2em;
+    width:		25%;
+}
+
+/* to reduce the spacing between table rows, and make text align left and top */
+div.raceinfo td
+{
+    text-align:		left;
+    vertical-align:	top !important;
+    padding-top:	0.5em;
+    padding-bottom:	0.5em;
+
+}
+
+/* to allow the whole li image to show   */
+.art-content-layout  div li
+{
+    padding-bottom:	0.2em !important;
+}
+
+/* to reduce the indentation of list items */
+.art-content-layout div ul
+{
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+
+}
+
+/* to fit more items onto the menu bar */
+.art-menu li
+{
+    margin-left:	0.2em !important;
+    margin-right:	0.2em !important;
+}
+
+
+
+/* to make the gallery title visible */
+.foldergallery a
+{
+	color:	#3c4e58 !important;
+}
+
+/* to make headings in right sidebar more visible against dark background */
+.art-content-layout .art-sidebar2 h3
+{
+	color:	#b6c5cd;
+}
