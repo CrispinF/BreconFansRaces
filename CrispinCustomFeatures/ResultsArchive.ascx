@@ -189,7 +189,7 @@
 
 </script>
 
-<mp:CornerRounderTop id="ctop1" runat="server" />
+
  <asp:Panel ID="pnlWrapper" runat="server" CssClass="panelwrapper linksmodule">
  <portal:ModuleTitleControl id="Title1" runat="server" />
 
@@ -218,18 +218,18 @@
 				</th>
 				<th>&nbsp;</th>
 				<th>&nbsp;</th>
-				<th>Count</th>
+				<!-- <th>Count</th> -->
 			</tr>
 			<tr>
 			<td>
 			<asp:DropDownList ID="DDL_Year" runat="server" AppendDataBoundItems="False" 
 					DataSourceID="SQLDataSource_Years" DataTextField="YearText" 
-				DataValueField="YearValue" ToolTip="Select a year from the list" style="width:6em;">
+				DataValueField="YearValue" ToolTip="Select a year from the list" style="width:6em;margin-right:0.5em;">
 			</asp:DropDownList>
 			</td>
 			<td>
 			 <asp:DropDownList ID="DDL_Sex" runat="server" AppendDataBoundItems="False" DataTextField="Sex" 
-				DataValueField="Sex" ToolTip="Select M or F" style="width:6em;">
+				DataValueField="Sex" ToolTip="Select M or F" style="width:6em;margin-right:0.5em;">
 				<asp:ListItem  Value="%" Selected="True">ALL</asp:ListItem>
 				<asp:ListItem Selected="False">M</asp:ListItem>
 				<asp:ListItem Selected="False">F</asp:ListItem>
@@ -238,25 +238,25 @@
 			<td>
 			 <asp:DropDownList ID="DDL_Club" runat="server" AppendDataBoundItems="True" 
 					DataSourceID="SQLDataSource_Clubs" DataTextField="Club" 
-				DataValueField="Club" ToolTip="Select a club from the list">
+				DataValueField="Club" ToolTip="Select a club from the list" style="margin-right:0.5em;">
 				<asp:ListItem Value="%" Selected="True">ALL</asp:ListItem>
 			</asp:DropDownList>
 			</td>
 			<td>
 			<asp:DropDownList ID="DDL_Cat" runat="server" AppendDataBoundItems="True" 
 					DataSourceID="SQLDataSource_Cats" DataTextField="Cat" 
-				DataValueField="Cat" ToolTip="Select a category from the list" style="width:6em;">
+				DataValueField="Cat" ToolTip="Select a category from the list" style="width:6em;margin-right:0.5em;">
 				<asp:ListItem Value="%" Selected="True">ALL</asp:ListItem>
 			</asp:DropDownList>
 			</td>
 			<td>
 				<asp:TextBox ID="Txt_Name" runat="server" 
-					ToolTip="Enter all or part of a runner's name" style="width:8em;"></asp:TextBox>
+					ToolTip="Enter all or part of a runner's name" style="width:8em;margin-right:0.5em;"></asp:TextBox>
 			</td>
 			<td>
 					<asp:Button 
 					ID="Btn_Go" runat="server" Text="GO" 
-						ToolTip="Click to filter on these criteria" 
+						ToolTip="Click to filter on these criteria"  style="margin-right:0.5em;"
 						 />
 			</td>
 			<td>
@@ -264,10 +264,12 @@
 					ID="Btn_ShowAll" runat="server" Text="SHOW ALL" 
 						ToolTip="Click to clear criteria and show all results" />
 			</td>
+			<%--
 			<td>
 					<asp:TextBox ID="Txt_ResultCount" runat="server"
 						style="text-align:center;width:6em;" ToolTip="Number of results currently displayed"></asp:TextBox>
 			</td>
+			--%>
 			</tr>
 			</table>
 		</div>
@@ -306,10 +308,15 @@
 
         <asp:AccessDataSource ID="AccessDataSource_Cats" runat="server"  
         SelectCommand="SELECT Cat FROM [bfr_Categories] WHERE [Cat] ORDER BY Cat"></asp:AccessDataSource>
-<h2>Results</h2>
-		<div style="overflow-x:auto;width:100%;">
-        <asp:GridView ID="Grid_Results" cssclass="resultstable" runat="server"  
-            AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" 
+<h2>Results &nbsp;(
+<asp:TextBox ID="Txt_ResultCount" runat="server"
+						style="text-align:center;width:6em;margin-left:1em;" ToolTip="Number of results currently displayed"></asp:TextBox>
+						)
+</h2>
+		<!-- <div style="overflow-x:auto;width:100%;"> -->
+		<div class="table-responsive">
+        <asp:GridView ID="Grid_Results" cssclass="table table-striped" runat="server"  
+            AllowSorting="True" AutoGenerateColumns="False" 
             DataSourceID="SQLDataSource_Results" ForeColor="#333333" 
             GridLines="None" 
             EmptyDataText="No results match those criteria!">
@@ -348,7 +355,7 @@
         </asp:GridView>
 		</div>
         </div>
-<div class="modulefooter"></div>
+
  </asp:Panel>
- <mp:CornerRounderBottom id="cbottom1" runat="server" />
+
 
